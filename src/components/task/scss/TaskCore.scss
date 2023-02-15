@@ -1,0 +1,348 @@
+.tdcpn-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas:
+        "top top top"
+        "left center right"
+        "bottom bottom bottom";
+
+    // display: flex;
+    // flex: 1 1 auto;
+
+    .tdcpn-top {
+        grid-area: top;
+        // background-color: green;
+    }
+
+    .tdcpn-right {
+        grid-area: right;
+        background-color: greenyellow;
+    }
+
+    .tdcpn-bottom {
+        grid-area: bottom;
+        background-color: lightcoral;
+    }
+
+    .tdcpn-left {
+        grid-area: left;
+        // background-color: lightseagreen;
+    }
+
+    .tdcpn-center {
+        grid-area: center;
+        // background-color: indigo;
+    }
+
+    .tdcpn-content-title {
+        font-weight: 500;
+        color: #495057;
+        margin: 0.25rem 0;
+    }
+
+    .tdcpn-content-box {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    .tdcpn-content-footer {
+        margin: 0.25rem 0;
+    }
+
+    .tdcpn-navigation {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.5rem;
+        margin-bottom: 0.25rem;
+        border-radius: 4px;
+        position: relative;
+
+        .tdcpn-navigation-icon {
+            width: 28px;
+            display: flex;
+            justify-content: center;
+            margin-right: 0.5rem;
+        }
+
+        &:hover {
+            background-color: #e9eaee;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 50%;
+                border-radius: 25%;
+                background-color: #0a66b1;
+                left: 0;
+            }
+        }
+
+        .fad {
+            font-size: 18px;
+        }
+    }
+}
+
+$dialog-border-radius: 5px;
+$dialog-border-color: 1px solid #ccc;
+
+.p-dialog {
+    border-radius: $dialog-border-radius;
+    box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.13), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.11);
+    // box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.13), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.11);
+    //box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.13), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.11);
+}
+
+.p-dialog .p-dialog-header {
+    border-bottom: none;
+    background-color: #f2f3f7;
+    border-top-left-radius: $dialog-border-radius;
+    border-top-right-radius: $dialog-border-radius;
+    border-top: $dialog-border-color;
+    border-left: $dialog-border-color;
+    border-right: $dialog-border-color;
+}
+
+.p-dialog .p-dialog-content {
+    background-color: #f2f3f7;
+    border-bottom-left-radius: $dialog-border-radius;
+    border-bottom-right-radius: $dialog-border-radius;
+    border-bottom: $dialog-border-color;
+    border-left: $dialog-border-color;
+    border-right: $dialog-border-color;
+}
+
+.p-dialog-mask.p-component-overlay {
+    background-color: rgba($color: #000000, $alpha: 0.28);
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.p-autocomplete {
+    &:hover {
+        .p-autocomplete-dropdown {
+            border-color: #000 !important;
+        }
+        .p-autocomplete-multiple-container {
+            border-color: #000 !important;
+        }
+    }
+
+    .p-autocomplete-dropdown {
+        border-color: #ccc !important;
+        position: absolute;
+        right: 0;
+        height: 100%;
+    }
+
+    &.p-inputwrapper-focus {
+        .p-autocomplete-dropdown {
+            border-color: #556ee6 !important;
+        }
+        .p-autocomplete-multiple-container {
+            border-color: #556ee6 !important;
+        }
+    }
+}
+
+.p-autocomplete.p-autocomplete-dd .p-autocomplete-multiple-container {
+    padding-right: 48px;
+}
+
+.p-autocomplete.p-autocomplete-multiple .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
+    box-shadow: none;
+}
+
+.p-float-label label {
+    line-height: unset;
+    display: flex;
+    padding: 0;
+    margin: 0 !important;
+    top: calc(50% - 0.5rem) !important;
+    left: 0.65rem;
+    height: 100%;
+}
+
+.p-float-label input:focus ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+    background-color: transparent;
+    top: 0 !important   ;
+    font-size: 0.75rem;
+    left: 0.65rem;
+    padding: 4px 0 0 0;
+    margin: 0;
+    align-items: unset;
+}
+
+$inputHeight: 40px;
+
+.p-float-label {
+    .p-inputtext {
+        height: $inputHeight;
+        padding: 16px 0.65rem 0 0.65rem !important;
+    }
+
+    .p-dropdown {
+        .p-inputtext {
+            height: 38px;
+        }
+    }
+}
+
+.p-float-label textarea {
+    display: block;
+    min-height: 40px;
+    padding: 18px 0.65rem 0 0.65rem !important;
+}
+
+.p-button.p-button-icon-only.p-button-rounded {
+    width: 28px;
+    height: 28px;
+    .bx {
+        font-size: 18px;
+    }
+
+    &.p-button-lg {
+        width: 34px;
+        height: 34px;
+        .bx {
+            font-size: 22px;
+        }
+    }
+}
+
+.jodit-toolbar-button {
+    &.jodit-toolbar-button_bold,
+    &.jodit-toolbar-button_strikethrough,
+    &.jodit-toolbar-button_underline,
+    &.jodit-toolbar-button_italic {
+        .jodit-toolbar-button__icon {
+            &::before {
+                font-family: "boxicons";
+                font-size: 20px;
+            }
+        }
+        .jodit-icon {
+            display: none;
+        }
+    }
+
+    &.jodit-toolbar-button_bold .jodit-toolbar-button__icon::before {
+        content: var(--bx-bold);
+    }
+
+    &.jodit-toolbar-button_strikethrough .jodit-toolbar-button__icon::before {
+        content: var(--bx-strikethrough);
+    }
+
+    &.jodit-toolbar-button_underline .jodit-toolbar-button__icon::before {
+        content: var(--bx-underline);
+    }
+
+    &.jodit-toolbar-button_italic .jodit-toolbar-button__icon::before {
+        content: var(--bx-italic);
+    }
+}
+
+.p-field {
+    margin-bottom: 0.125rem;
+
+    &.p-sm-1,
+    &.p-sm-2,
+    &.p-sm-3,
+    &.p-sm-4,
+    &.p-sm-5,
+    &.p-sm-6,
+    &.p-sm-7,
+    &.p-sm-8,
+    &.p-sm-9,
+    &.p-sm-10,
+    &.p-sm-11,
+    &.p-sm-12,
+    &.p-md-1,
+    &.p-md-2,
+    &.p-md-3,
+    &.p-md-4,
+    &.p-md-5,
+    &.p-md-6,
+    &.p-md-7,
+    &.p-md-8,
+    &.p-md-9,
+    &.p-md-10,
+    &.p-md-11,
+    &.p-md-12,
+    &.p-lg-1,
+    &.p-lg-2,
+    &.p-lg-3,
+    &.p-lg-4,
+    &.p-lg-5,
+    &.p-lg-6,
+    &.p-lg-7,
+    &.p-lg-8,
+    &.p-lg-9,
+    &.p-lg-10,
+    &.p-lg-11,
+    &.p-lg-12,
+    &.p-xl-1,
+    &.p-xl-2,
+    &.p-xl-3,
+    &.p-xl-4,
+    &.p-xl-5,
+    &.p-xl-6,
+    &.p-xl-7,
+    &.p-xl-8,
+    &.p-xl-9,
+    &.p-xl-10,
+    &.p-xl-11,
+    &.p-xl-12 {
+        padding: 0 0.125rem 0.125rem 0.125rem !important;
+    }
+}
+
+.p-overlaypanel {
+    background-color: #f2f3f7;
+    border: 1px solid #ccc;
+
+    &::before,
+    &::after {
+        content: none;
+    }
+
+    .p-overlaypanel-content {
+        padding: 0.5rem;
+    }
+
+    .p-overlaypanel-close {
+        background-color: transparent;
+        width: auto;
+        height: auto;
+        top: 0.25rem;
+        right: 0.25rem;
+        color: rgba($color: #000000, $alpha: 0.6);
+
+        &:enabled:hover {
+            background-color: transparent;
+            color: var(--material-red);
+        }
+
+        .p-overlaypanel-close-icon::before {
+            font-family: "boxicons";
+            content: var(--bx-x);
+            font-size: 20px;
+        }
+    }
+}

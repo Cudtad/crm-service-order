@@ -1,0 +1,49 @@
+//.task-list-group-addon{
+//    padding: 0 !important;
+//    border-radius: 0 !important;
+//}
+//.no-border-input{
+//    border: none !important;
+//}
+.task-document{
+    span{
+        &.p-button-label{
+            &.p-clickable{
+                display: none;
+            }
+        }
+    }
+    .p-fileupload{
+        color: #172b4d;
+        background-color: transparent;
+        border-color: transparent;
+        .p-button{
+            color: #172b4d;
+            background-color: #dcdcdc;
+            border-color: transparent;
+        }
+
+    }
+
+
+
+    //input{
+    //    &.p-inputtext{
+    //        @extend .no-border-input;
+    //        font-size: 12px !important;
+    //        padding: 5px 5px !important;
+    //
+    //        &.check-group-input{
+    //            width: 250px;
+    //            font-weight: bolder;
+    //        }
+    //    }
+    //    &.p-disabled{
+    //        opacity: 1 !important;
+    //    }
+    //}
+
+    //span.p-inputgroup-addon {
+    //    @extend .task-list-group-addon;
+    //}
+}

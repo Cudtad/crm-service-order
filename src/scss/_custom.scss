@@ -1,0 +1,369 @@
+.p-column-header-content {
+  .p-column-title {
+    font-weight: 600;
+  }
+}
+
+
+
+
+
+
+.crm-text-13 {
+  font-size: 13px !important;
+}
+
+.crm-text-12 {
+  font-size: 12px !important;
+}
+.crm-bg-white {
+  background: white !important;
+}
+
+.crm-filter {
+  .p-autocomplete-multiple-container {
+    width: 100%;
+  }
+}
+
+.crm-splitbutton-menu {
+  max-height: 200px;
+  width: auto !important;
+  min-width: 120px !important;
+  overflow-y: auto;
+  .p-menuitem-link {
+    padding: 5px 10px !important;
+    .p-menuitem-text {
+      color: #2196f3 !important;
+    }
+  }
+  .p-menuitem {
+    padding: 3px 0 !important;
+  }
+}
+
+.crm-personel-search {
+  .p-autocomplete-input-token {
+    input {
+      width: 100% !important;
+    }
+  }
+  .icon-search {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    opacity: 0.7;
+  }
+}
+
+.crm-toolbar-left-wrapper {
+  .filter-wrapper {
+    .module-name {
+      font-size: 13px;
+    }
+    .toolbar-dropdown {
+      .p-dropdown-label {
+        font-weight: 700;
+        padding: 0;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.crm-toolbar-right-wrapper {
+  .action-wrapper {
+    button {
+      font-size: 13px;
+    }
+    .crm-button-filter {
+      .p-menuitem-text {
+        font-size: 13px;
+      }
+    }
+  }
+  .search-wrapper {
+    .p-input-icon-left {
+      input {
+        width: 100%;
+      }
+    }
+    button {
+      box-shadow: unset !important;
+      border: 1px solid #bdbdbd !important;
+      padding: 5.75px 0 !important;
+    }
+  }
+  .crm-search-input {
+    font-size: 13px;
+    padding: 7px 25px;
+  }
+}
+
+.crm-table {
+  .p-datatable-header {
+    border-radius: 7px 7px 0 0;
+  }
+  .p-datatable-wrapper {
+    border: 1px solid #c6c6c6 !important;
+    border-bottom: unset !important;
+    table {
+      .p-datatable-thead {
+        tr th {
+          background: rgb(243, 243, 243) !important;
+        }
+      }
+      td {
+        p {
+          margin: 0px !important;
+        }
+      }
+      .p-datatable-tbody{
+        tr{
+            td{
+                white-space: inherit;
+            }
+        }
+        .p-datatable-emptymessage{
+            td{
+                justify-content: center;
+                
+                .empty-data-container {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  
+              }
+            }
+        }
+    }
+    }
+  }
+  .p-paginator-bottom {
+    display: flex;
+    justify-content: center;
+  }
+  .crm-table-column-product {
+    justify-content: space-between;
+    .p-button-info{
+        position: static !important;
+        right: none !important;
+    }
+    .menu-dropdown-button {
+      width: fit-content!important;
+      height: auto!important;
+      padding: 0px 3px!important;
+    }
+    .x-avatar-container{
+        justify-content: flex-start !important;
+      .x-avatar-label {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.x-avatar-label{
+    width: calc(100% - 19px);
+}
+
+.crm-menu-dropdown-button {
+  width: 20px !important;
+  height: 20px !important;
+}
+.crm-matrix {
+  .priority-impact-matrix {
+    .impact-tag {
+      width: 120px;
+      height: 40px;
+      span.p-dropdown-label.p-inputtext {
+        padding: 4px 4px;
+      }
+      .p-dropdown {
+        .p-dropdown-trigger {
+          width: 1.7rem;
+        }
+      }
+      .p-dropdown.p-component.p-inputwrapper.p-inputwrapper-filled {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.crm-header-bg-contract {
+  background-color: rgb(3, 191, 22, 0.66);
+}
+
+.crm-header-bg-contact {
+  background-color: rgb(132, 0, 255, 0.58);
+}
+
+.crm-header-bg-customer {
+  background-color: rgb(128, 128, 255, 0.85);
+}
+
+.crm-header-bg-path {
+  background-color: #117171;
+}
+.crm-header-bg-opp {
+  background-color: rgb(250, 205, 145);
+}
+
+.crm-header-bg-quote {
+  background-color: rgb(112, 182, 3, 0.65);
+}
+
+.crm-header-bg-order {
+  background-color: rgb(0, 134, 191, 0.71);
+}
+
+.crm-header-bg-price {
+  background-color: rgb(102, 197, 157);
+}
+
+.crm-header-bg-exchange-rate {
+  background-color: rgb(217, 0, 27);
+}
+
+.crm-header-bg-material-type {
+  background-color: rgb(255, 173, 51);
+}
+
+.crm-header-bg-service-order{
+    background-color: rgb(102, 197, 157);
+}
+
+.crm-panel-transparent.p-panel {
+  .p-panel-content {
+    background: transparent !important;
+  }
+}
+
+.crm-confirm-dialog {
+  .p-dialog-header {
+    text-align: center;
+    .p-dialog-title {
+      font-size: 1.5rem !important;
+    }
+  }
+  .p-dialog-content {
+    padding: 20px 0px !important;
+    border-radius: unset !important;
+    min-width: 700px;
+    text-align: center;
+  }
+  .p-dialog-footer {
+    border-top: #ccc 1px solid !important;
+    background-color: #f0f0f0 !important;
+  }
+  .p-confirm-dialog-message {
+    width: 100%;
+  }
+}
+
+.filter-dashboard-time {
+  .p-dropdown {
+    background: white;
+    border: 1px solid;
+    border-radius: 3px;
+    .p-dropdown-label {
+      padding: 3px 5px;
+    }
+    .p-dropdown-trigger {
+      width: auto;
+    }
+    &:hover{
+      background: white!important;
+    }
+  }
+}
+
+// .field-content {
+  .p-invalid {
+    color: #EF4444;
+  }
+// }
+
+.crm-kanban{
+  background: white;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border:1px solid #e4e4e4;
+  .crm-kanban-header {
+    padding: 0.5rem;
+  }
+  .react-kanban-board {
+  }
+  .react-kanban-column-header {
+    background-color: #eee;
+    padding-top: 15px;
+    .column-title {
+      display: flex;
+      font-weight: 500;
+      &-amount {
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
+  .react-kanban-column {
+    max-height: calc(100vh - 210px) !important;
+    padding: 15px 7px;
+    padding-bottom: 0px;
+    padding-top: 0;
+    overflow: auto;
+  }
+  .react-kanban-column > div:first-child {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .react-kanban-column::-webkit-scrollbar {
+    display: none;
+  }
+  .react-kanban-card {
+    font-size: 14px;
+    max-width: 350px;
+    min-width: 350px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    &__title {
+      border-bottom: unset;
+    }
+    &__description {
+      padding-top: 0px;
+    }
+  }
+}
+.crm-hourglass{
+  i{
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .due{
+    color: #f9a825 !important;
+  }
+  .overdue{
+    color: #f44336 !important;
+  }
+}
+.crm-dialog{
+  .p-dialog-header-close-icon {
+    display: none;
+  }
+}
+
+.crm-btn-view {
+  opacity: 0.6;
+}
+.crm-btn-view-active {
+  opacity: 1!important;
+}
+
+.formgrid.grid .p-float-label .p-multiselect.p-inputwrapper-filled .p-multiselect-label {
+    padding: 20px 0 4px 8px !important;
+}

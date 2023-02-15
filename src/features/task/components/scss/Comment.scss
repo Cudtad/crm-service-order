@@ -1,0 +1,54 @@
+.p-tooltip {
+    .p-tooltip-text {
+        opacity: .4;
+    }
+}
+
+.comment {
+    .p-dataview {
+        .p-dataview-content {
+            padding: 0;
+        }
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .p-float-label {
+        label {
+            color: black;
+            //background-color: #fff;
+            padding: 2px 0px;
+            margin-left: -4px;
+            margin-top: 0;
+            top: 0.5rem;
+        }
+
+        .comment-time {
+            width: 100px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .mentions {
+            .mentions__control {
+                .mentions__highlighter {
+                    padding: 30px 12px 12px 12px !important;
+                    background-color: #edf1f3 !important;
+
+                    strong {
+                        background-color: #edf1f3 !important;
+                    }
+                }
+                .mentions__input {
+                    padding: 30px 12px 12px 12px !important;
+                }
+            }
+        }
+    }
+}

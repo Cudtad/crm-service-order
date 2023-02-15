@@ -1,0 +1,49 @@
+.x-dropdown-tree-panel {
+    &.p-dropdown-panel,
+    &.p-multiselect-panel {
+        .p-multiselect-items .p-multiselect-item,
+        .p-dropdown-items .p-dropdown-item {
+            padding: 0 0.75rem;
+            overflow: visible;
+
+            .x-dropdown-tree-value {
+                padding: 0.5rem 0;
+            }
+
+            .x-dropdown-tree-sub-level {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: -18px;
+                    height: 50%;
+                    width: 12px;
+                    border-bottom: 1px dashed var(--material-grey);
+                }
+
+                &.last-child {
+                    border-left: none;
+                    &::after {
+                        height: 50%;
+                    }
+                }
+            }
+
+            .x-dropdown-tree-parent {
+                position: relative;
+                overflow: visible;
+
+                .x-dropdown-tree-branch {
+                    position: absolute;
+                    content: "";
+                    top: 100%;
+                    width: 1px;
+                    border-left: 1px dashed var(--material-grey);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

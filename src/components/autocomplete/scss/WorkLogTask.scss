@@ -1,0 +1,13 @@
+.worklog-task-content {
+    .show-more-content-worklog {
+        max-height: 284px;
+        overflow: hidden;
+    }
+
+    .show-more-checker-label {
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.task-list-group-addon {
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.no-border-input {
+    border: none !important;
+}
+
+.task-check-list {
+    &.toogle-true {
+        .p-inputgroup-addon {
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+
+        .p-autocomplete-input-token {
+            display: none;
+        }
+
+        .button-remove {
+            display: none;
+        }
+
+        .button-add {
+            display: none;
+        }
+    }
+
+    .input-list-name {
+        width: 45%;
+    }
+
+    .input-list-user {
+        width: 45%;
+    }
+
+    input {
+        &.p-inputtext {
+            @extend .no-border-input;
+            font-size: 12px !important;
+            padding: 5px 5px !important;
+
+            &.check-group-input {
+                width: 250px;
+                font-weight: bolder;
+            }
+        }
+
+        &.p-disabled {
+            opacity: 1 !important;
+        }
+    }
+
+    button {
+        &.p-disabled {
+            display: none !important;
+        }
+    }
+
+    .p-autocomplete {
+        .p-autocomplete-multiple-container {
+            border: none !important;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+        }
+
+        .p-autocomplete-token {
+            padding: 0.2rem 0.2rem !important;
+            color: #02178c !important;
+            font-size: 12px !important;
+        }
+    }
+
+    span.p-inputgroup-addon {
+        @extend .task-list-group-addon;
+    }
+}

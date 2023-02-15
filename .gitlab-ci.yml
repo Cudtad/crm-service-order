@@ -1,0 +1,45 @@
+stages:
+  - build_dev
+  - build_qas
+  - build_prod
+
+build_dev:
+  stage: build_dev
+  tags:
+    - xdp-ui
+  script:
+    - yarn
+    - yarn build
+    - docker build -t registry.xdp.vn:5000/ui_crm_service_order:1.0.0 --rm=true  -f Dockerfile .
+    - docker push registry.xdp.vn:5000/ui_crm_service_order:1.0.0
+    - kubectl -n ui-crm-service-order rollout restart deployment ui-crm-service-order
+  only:
+    - dev
+
+build_qas:
+  stage: build_qas
+  tags:
+    - xdp-ui
+  script:
+    - yarn
+    - yarn build
+    - docker build -t registry.xdp.vn:5000/ui_crm_service_order:qas-1.0.0 --rm=true  -f Dockerfile .
+    - docker push registry.xdp.vn:5000/ui_crm_service_order:qas-1.0.0
+  only:
+    - qas
+  except:
+    - dev
+
+build_prod:
+  stage: build_prod
+  tags:
+    - xdp-ui
+  script:
+    - yarn
+    - yarn build
+    - docker build -t registry.xdp.vn:5000/ui_crm_service_order:$CI_COMMIT_TAG --rm=true  -f Dockerfile .
+    - docker push registry.xdp.vn:5000/ui_crm_service_order:$CI_COMMIT_TAG
+  only:
+    - /^prod-[0-9]+(?:.[0-9]+)+(?:.[0-9]+)+$/
+  except:
+    - qas

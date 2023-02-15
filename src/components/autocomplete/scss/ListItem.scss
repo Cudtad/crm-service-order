@@ -1,0 +1,41 @@
+.list-item {
+    .p-button {
+        color: #fff;
+        background-color: #556ee6;
+        border: 1px solid #556ee6;
+        padding: 7.6px 12px;
+        font-size: 13px;
+        font-weight: 400;
+
+        &:hover {
+            background-color: #485ec4;
+            border-color: #4458b8;
+        }
+
+        .p-button-icon-left {
+            &.bx {
+                font-size: 16px;
+            }
+        }
+
+        &.p-button-success {
+            background: #34c38f;
+            border: 1px solid #34c38f;
+
+            &:hover {
+                background-color: #2ca67a !important;
+                border-color: #2a9c72 !important;
+            }
+        }
+
+        &.p-button-danger {
+            background-color: #f46a6a;
+            border: 1px solid #f46a6a;
+
+            &:hover {
+                background: rgba(211, 47, 47, 0.04) !important;
+                border-color: transparent !important;
+            }
+        }
+    }
+}

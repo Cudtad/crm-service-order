@@ -1,0 +1,65 @@
+.task-document-detail {
+    .p-float-label {
+        .label-history {
+            top: -.9rem !important;
+            font-size: 12px;
+        }
+    }
+
+    .comment-content {
+        //background-color: rgba(70, 70, 70, .1);
+        background-color: #eff2f7;
+        border-radius: 8px 8px 8px 8px;
+        padding: 5px !important;
+
+        .comment-content-user {
+            color: #495057;
+            font-weight: 500;
+            line-height: 1.2;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        .comment-content-detail {
+            color: #495057;
+            font-size: small;
+        }
+    }
+
+    .comment-time {
+        width: 100px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.p-tooltip {
+    &.comment-content-user-detail {
+        max-width: 350px;
+        width: 100%;
+
+        .p-tooltip-text {
+            //background: #ffffff !important;
+
+            img {
+                object-fit: contain;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                margin-right: 4px;
+            }
+
+            p {
+                //color: #495057;
+                margin: 0;
+                color: #ffffff;
+                font-weight: 500;
+            }
+        }
+    }
+}

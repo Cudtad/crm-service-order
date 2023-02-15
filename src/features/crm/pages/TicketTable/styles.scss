@@ -1,0 +1,15 @@
+.ticket-show-task {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+}
+
+.ticket-table {
+
+    .p-datatable-resizable .p-datatable-thead>tr>th,
+    .p-datatable-resizable .p-datatable-tfoot>tr>td,
+    .p-datatable-resizable .p-datatable-tbody>tr>td {
+        white-space: inherit;
+    }
+}

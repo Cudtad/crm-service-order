@@ -1,0 +1,48 @@
+.x-file-upload {
+    &.x-file-upload-button {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        width: fit-content;
+
+        .p-button {
+            border: none;
+            padding: 0 0.5rem;
+            color: rgba(0, 0, 0, 0.87);
+            font-weight: 400;
+            width: fit-content;
+            min-height: 26px;
+            margin-left: 0.25rem;
+
+
+        //     .p-button-label {
+        //         white-space: nowrap;
+        //     }
+
+        //     .p-button-icon {
+        //         &::before {
+        //             font-size: 20px;
+        //         }
+        //     }
+        }
+
+        .p-fileupload-content {
+            display: none;
+        }
+    }
+    &.x-file-upload-button-crm {
+
+        .p-button {
+            margin-left: 0.25rem;
+
+
+            .p-button-label {
+                white-space: nowrap;
+            }
+        }
+
+        .p-fileupload-content {
+            display: none;
+        }
+    }
+}

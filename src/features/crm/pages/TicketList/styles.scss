@@ -1,0 +1,14 @@
+.view-type-button {
+    .p-button {
+        flex-direction: column;
+        min-width: fit-content;
+        padding: 5px;
+    }
+}
+
+.filter-date {
+    .p-panel-content {
+        padding: 2px;
+        background-color: transparent;
+    }
+}

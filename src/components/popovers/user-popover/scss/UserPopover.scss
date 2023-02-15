@@ -1,0 +1,26 @@
+.x-comment-user-info {
+    background-color: #f2f3f7;
+    border-radius: 12px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--material-grey-4);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    // box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: flex-start;
+
+    .x-comment-user-info-container {
+        margin-left: 0.75rem;
+
+        .x-comment-user-info-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .user-department-list {
+        margin: 0;
+        padding: 0.25rem 1.5rem;
+        list-style-type: circle;
+    }
+}

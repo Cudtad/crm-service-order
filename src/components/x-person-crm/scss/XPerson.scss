@@ -1,0 +1,80 @@
+.x-person-detail {
+    border-radius: var(--border-radius);
+    background-color: var(--component-background-color-transparent);
+
+    .x-person-detail-tabs {
+        padding: 0.5rem 0 0.25rem 0;
+        border: 1px solid var(--strong-border-radius);
+        position: relative;
+
+        .x-person-detail-global-info {
+            position: relative;
+            margin: 0.75rem 1rem 1rem 1rem;
+        }
+
+        &::before {
+            position: absolute;
+            width: calc(100% + 2rem);
+            left: 0;
+            top: 0;
+            bottom: 1rem;
+            height: calc(100% - 1rem);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent), url("assets/images/background/person-background-green.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            border-bottom: 1px solid var(--material-grey-5);
+            box-shadow: var(--shadow-depth-16);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: calc(100% - 2px);
+            height: 1rem;
+            left: 0;
+            bottom: 0;
+            border-left: 1px solid var(--material-grey-5);
+            border-right: 1px solid var(--material-grey-5);
+        }
+
+        .p-tabmenu {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-depth-16);
+            border-bottom: 0;
+        }
+
+        .p-tabview {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-depth-16);
+            margin: 0 1rem;
+            overflow: hidden;
+            .p-tabview-nav-container {
+                background-color: #fff;
+            }
+
+            .p-tabview-nav li .p-tabview-nav-link {
+                padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+            }
+
+            .p-tabview-nav-next {
+                border-top-right-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius);
+            }
+
+            .p-tabview-nav-prev {
+                border-top-left-radius: var(--border-radius);
+                border-bottom-left-radius: var(--border-radius);
+            }
+        }
+    }
+
+    .x-person-tab-content {
+        border-left: 1px solid var(--material-grey-5);
+        border-bottom: 1px solid var(--material-grey-5);
+        border-right: 1px solid var(--material-grey-5);
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+    }
+}

@@ -1,0 +1,101 @@
+.ticket-setting-notice {
+    .tab-menu {
+        .p-tabview-nav li .p-tabview-nav-link {
+            padding: 0 !important;
+        }
+
+        .rule-action-tab-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+    .rule-action-list {
+        .p-listbox {
+            min-height: 100%;
+
+            .p-listbox-item {
+                padding: 0.25rem 0.5rem !important;
+                border-bottom: 1px solid var(--material-grey-4) !important;
+
+                &.p-highlight {
+                    color: rgba(0, 0, 0, 0.87);
+                    font-weight: 500;
+                    background-color: var(--material-grey-3);
+                }
+            }
+        }
+
+        .rule-action-list-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            .item-info {
+                display: flex;
+                align-items: center;
+            }
+
+            .item-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .rule-action-not-selected {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .entity-field-list {
+        height: 100%;
+        .p-listbox {
+            //min-height: 100%;
+            height: calc(100vh - 300px);
+            overflow: auto;
+
+            .p-listbox-item {
+                padding: 0.5rem 0.75rem !important;
+                border-bottom: 1px solid var(--material-grey-4) !important;
+            }
+        }
+
+        .entity-field-list-item {
+            display: grid;
+            grid-template-columns: 24px 1fr auto;
+
+            .item-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                color: var(--material-grey);
+                font-size: 13px;
+
+                .fa,
+                .fas,
+                .far {
+                    font-size: 14px;
+                }
+            }
+
+            .item-info {
+                padding: 0 0 0 0.5rem;
+                display: flex;
+                justify-content: start;
+                flex-direction: column;
+            }
+
+            .item-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+namespace: ui-crm-service-order
+replicaCount: 1
+appName: ui-crm-service-order
+instance: sicix
+timezone: Asia/Ho_Chi_Minh
+dateFormat: yyyy-MM-dd'T'HH:mm:ssZ
+apiKey: test
+
+xdp:
+  name: ui-crm-service-order
+  ingress:
+    schema: http
+    host: dev.xdp.vn
+    path: /crm-service-order/(.*)
+    pathType: ImplementationSpecific
+
+container:
+  port: 8080
+  image:
+    repository: registry.xdp.vn:5000/ui_crm_service_order
+    pullPolicy: Always
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+  livenessProbe: |
+    failureThreshold: 3
+    initialDelaySeconds: 30
+    periodSeconds: 2
+    successThreshold: 1
+    tcpSocket:
+      port: {{ .Values.service.port }}
+    timeoutSeconds: 2
+  readinessProbe: |
+    failureThreshold: 3
+    initialDelaySeconds: 30
+    periodSeconds: 2
+    successThreshold: 2
+    tcpSocket:
+      port: {{ .Values.service.port }}
+    timeoutSeconds: 2
+resources: {}
+
+service:
+  name: tcp
+  type: ClusterIP
+  port: 80
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+# runAsUser: 1000
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 90
+podAntiAffinity:
+  enabled: true
+nodeSelector: {}
+
+tolerations: []
+
+affinity:
+  podAntiAffinity:
+    preferred: true

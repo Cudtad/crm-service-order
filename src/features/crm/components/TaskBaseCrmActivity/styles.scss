@@ -1,0 +1,109 @@
+.crm-table-account-related-activity {
+  .col-table-0 {
+    flex: 1 0 300px !important;
+  }
+  .col-table-1 {
+    flex: 0 0 150px !important;
+  }
+  .col-table-2 {
+    flex: 0 0 150px !important;
+  }
+  .col-table-3 {
+    flex: 0 0 150px !important;
+  }
+  .col-table-4 {
+    flex: 0 0 150px !important;
+  }
+  .col-table-5 {
+    flex: 0 0 300px !important;
+  }
+  .col-table-6 {
+    flex: 0 0 200px !important;
+  }
+  .col-table-7 {
+    flex: 0 0 80px !important;
+  }
+}
+
+.crm-timeline {
+  .p-timeline-event {
+    .p-timeline-event-opposite {
+      flex: unset;
+      padding: 0 8px;
+    }
+  }
+}
+
+.color-task {
+  background-color: #45c65a !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px !important;
+  padding: 5px;
+}
+.color-phone {
+  background-color: #30bcce !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px !important;
+  padding: 5px;
+}
+.color-email {
+  background-color: #edb62f !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px !important;
+  padding: 5px;
+}
+.color-calendar {
+  background-color: #b268b5 !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px !important;
+  padding: 5px;
+}
+
+.crm-toolbar {
+  border-top: 1px solid rgb(201, 201, 201);
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  .crm-toolbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    .crm-button {
+      height: 34px;
+      width: max-content;
+      border-radius: unset;
+      color: rgba(0, 0, 0, 0.87) !important;
+      font-size: 13.5px;
+      font-weight: 400;
+      background-color: transparent;
+      border-bottom: 1px solid rgb(201, 201, 201);
+    }
+    .active {
+      background-color: white !important;
+      border-radius: unset;
+      border-left: 1px solid rgb(201, 201, 201);
+      border-right: 1px solid rgb(201, 201, 201);
+      border-bottom: unset;
+    }
+  }
+  .crm-toolbar-right {
+    width: 100%;
+    border-bottom: 1px solid rgb(201, 201, 201);
+  }
+}
+
+.menu-dropdown-button {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+
+.crm-activity-filter {
+  .p-autocomplete-multiple-container {
+    width: 100%;
+  }
+}

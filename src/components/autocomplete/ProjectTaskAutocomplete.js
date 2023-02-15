@@ -1,0 +1,267 @@
+import React, {useContext, useState} from 'react';
+import "./scss/UserAC.scss";
+import CommonFunction from '@lib/common';
+
+import {Tooltip} from "primereact/tooltip";
+import classNames from "classnames";
+
+// import XAutoComplete from "@ngdox/ui-lib/dist/components/x-autocomplete/XAutoComplete";
+import XAutoComplete from '@ui-lib/x-autocomplete/XAutoComplete';
+import TaskUtil from 'features/task/components/util/TaskUtil';
+import ProjectService from "services/ProjectService";
+import DisplayUtil from "../util/DisplayUtil";
+import _ from "lodash";
+
+export const ProjectTaskAutocomplete = (props) => {
+
+    const [filtered, setFiltered] = useState(null);
+    const { user } = props;
+    const t = CommonFunction.t;
+    const [lazy, setLazy] = useState({
+        page: 0,
+        size: 25,
+        affect: {
+            keyword: "",
+            groupId: -1,
+        },
+        condition: {
+            groupId: -1,
+            conditions:
+                [
+                    {
+                        logicOperator: "",
+                        conditionType: "GROUP",
+                        filterType: "ROLE",
+                        children: []
+                    }
+                ],
+        }
+    });
+
+    const { value, onChange, className, groupIds, type, status, project,workpackage, itemDisplay } = props;
+
+    const selectedTemplate = (item) => {
+        return (
+            <>
+                { itemDisplay &&
+                    <div className={`project-column-definition milestone-task-container`} >
+                        <div className="milestone-task-detail">
+                            <div>
+                                {/* task info */}
+                                <div className="align-items-center milestone-task-item-info">
+                                    <div className="flex flex-column">
+                                        <div className="flex align-items-stretch">
+                                            {itemDisplay && itemDisplay.state && <>
+                                                <Tooltip target={`.user-task-state.${item.state}`} content={t(`request.task.state.${item.state}`)} position="bottom"/>
+                                                    <i className={classNames({
+                                                    "user-task-state project-list-quick-action bx": true,
+                                                    "PENDING bx-pause text-grey-7": item.state === "PENDING",
+                                                    "IN_PROGRESS bx-play text-teal": item.state === "IN_PROGRESS",
+                                                    "DEFERRED bx-stopwatch text-orange-9": item.state === "DEFERRED",
+                                                    "CANCELED bx-x text-red-9": item.state === "CANCELED",
+                                                    "COMPLETED bx-check text-green": item.state === "COMPLETED",
+                                                    "REVIEWING bx-help text-purple": item.state === "REVIEWING"
+                                                })} style={{lineHeight: "16px"}} />
+                                                    <Tooltip target={`.user-important-task`} content={t(`task.important`)} position="bottom" />
+                                                    <i className={
+                                                    classNames({
+                                                    "user-important-task project-list-quick-action ml-1 mr-2": true,
+                                                    "bx bx-tag-alt text-grey-7": !item.important,
+                                                    "bx bxs-tag-alt text-yellow-9": item.important
+                                                })}
+                                                    />
+                                            </>
+                                            }
+                                            <div className="flex">
+                                                {/* task's name */}
+                                                {itemDisplay && itemDisplay.name &&
+                                                    <div className="flex">
+                                                        <span className="mr-2">{item.name}</span>
+                                                    </div>
+                                                }
+                                                {/* time */}
+                                                {itemDisplay && itemDisplay.date && <>
+                                                    <div className="flex align-items-center project-header-text pl-2">
+                                                        {CommonFunction.formatDate(item.startDate)}</div>
+                                                    <div className="flex align-items-center project-header-text pl-2">
+                                                        {CommonFunction.formatDate(item.deadline)}</div>
+                                                    <div className="flex align-items-center project-header-text pl-2">
+                                                        {CommonFunction.formatDate(item.closedOn)}</div>
+                                                </>}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {itemDisplay && itemDisplay.responsible &&
+                                    <div className="flex mt-1">
+                                        <div className="flex">
+                                            {item.responsibleUser &&
+                                                DisplayUtil.displayChipUser(item.responsibleUser, false, "18px")
+                                            }
+                                            <small className="pl-2 mt-2">{item.group && item.group.name}</small>
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                { !itemDisplay &&
+                    itemTemplate(item)
+                }
+            </>
+
+
+        )
+    }
+
+    const itemTemplate = (item) => {
+        return (
+            <div className={`project-column-definition milestone-task-container`} >
+                <div className="milestone-task-detail">
+                    <div>
+                        {/* task info */}
+                        <div className="align-items-center milestone-task-item-info">
+                            <div className="flex flex-column">
+                                <div className="flex align-items-stretch">
+                                    <Tooltip target={`.user-task-state.${item.state}`} content={t(`request.task.state.${item.state}`)} position="bottom" />
+                                    <i className={classNames({
+                                        "user-task-state project-list-quick-action bx": true,
+                                        "PENDING bx-pause text-grey-7": item.state === "PENDING",
+                                        "IN_PROGRESS bx-play text-teal": item.state === "IN_PROGRESS",
+                                        "DEFERRED bx-stopwatch text-orange-9": item.state === "DEFERRED",
+                                        "CANCELED bx-x text-red-9": item.state === "CANCELED",
+                                        "COMPLETED bx-check text-green": item.state === "COMPLETED",
+                                        "REVIEWING bx-help text-purple": item.state === "REVIEWING"
+                                    })} style={{ lineHeight: "16px" }} />
+                                    <Tooltip target={`.user-important-task`} content={t(`task.important`)} position="bottom" />
+                                    <i className={
+                                        classNames({
+                                            "user-important-task project-list-quick-action ml-1 mr-2": true,
+                                            "bx bx-tag-alt text-grey-7": !item.important,
+                                            "bx bxs-tag-alt text-yellow-9": item.important
+                                        })}
+                                    />
+                                    <div className="flex">
+                                        {/* task's name */}
+                                        <div className="flex">
+                                            <span className="mr-2">{item.name}</span>
+                                        </div>
+                                        {/* time */}
+                                        <div className="flex align-items-center project-header-text pl-2">
+                                            {CommonFunction.formatDate(item.startDate)}</div>
+                                        <div className="flex align-items-center project-header-text pl-2">
+                                            {CommonFunction.formatDate(item.deadline)}</div>
+                                        <div className="flex align-items-center project-header-text pl-2">
+                                            {CommonFunction.formatDate(item.closedOn)}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex mt-1">
+                                <div className="flex">
+                                    {item.responsibleUser &&
+                                        DisplayUtil.displayChipUser(item.responsibleUser, false, "18px")
+                                    }
+                                    <small className="pl-2 mt-2">{item.group && item.group.name}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        )
+    }
+
+    return (
+        <XAutoComplete
+            {...props}
+            // complete method: search data
+            // paging: { page: 0, search: "what user's typed", size: 10}
+            // params: whatever pass to XAutoComplete's params props
+            completeMethod={async (paging, params) => {
+                let result = null;
+                let conditions = [];
+                conditions.push({
+                    logicOperator: "AND",
+                    conditionType: "RULE",
+                    filterType: "FIELD",
+                    fieldType: "STRING",
+                    fieldName: "name",
+                    operator: "LIKE",
+                    values: [paging.search]
+                });
+
+                let _groupIds = []
+                if (groupIds && groupIds.length > 0) {
+                    _groupIds = groupIds;
+                } else {
+                    _groupIds = window.app_context.user.groups.map(m => m.id);
+                }
+                conditions.push({
+                    logicOperator: "AND",
+                    conditionType: "RULE",
+                    filterType: "FIELD",
+                    fieldType: "LONG",
+                    fieldName: "group_id",
+                    operator: "IN",
+                    values: _groupIds
+                });
+                TaskUtil.addCondition(conditions, "type", null, null, ["TASK"]);
+                if (props.byResponsible) {
+                    TaskUtil.addCondition(conditions, "responsible_id", null, null, props.byResponsible);
+                }
+                if (project) {
+                    TaskUtil.addCondition(conditions, "project_id", null, null, [project.id]);
+                }
+                if (props.rootType) {
+                    TaskUtil.addCondition(conditions, "root_type", null, null, props.rootType);
+                }
+                if (props.rootKey) {
+                    TaskUtil.addCondition(conditions, "root_key", null, null, props.rootKey);
+                }
+                if (props.notDoneTask) {
+                    TaskUtil.addCondition(conditions, "state", null
+                        , "IN", [TaskUtil.S().DONE, TaskUtil.S().CANCELED, TaskUtil.S().COMPLETED], " AND NOT");
+                }
+                if (props.notCanceledTask) {
+                    TaskUtil.addCondition(conditions, "state", null, null, TaskUtil.S().CANCELED, " AND NOT");
+                }
+                lazy.page = paging.page;
+                lazy.size = paging.size;
+                lazy.body = {};
+                lazy.body.include = ['involves'];
+                lazy.body.conditions = conditions;
+                let taskProjects = [];
+                let listTasks = [];
+                let _listTasksProject = await ProjectService.task.list(lazy);
+                // let _listTasksTicket = await TicketApi.list(lazy);
+                if (_listTasksProject && _listTasksProject.content) {
+                    taskProjects = _listTasksProject.content.map(t => t.task) || [];
+                }
+                // if( _listTasksTicket && _listTasksTicket.content) {
+                //     taskTickets = _listTasksTicket.content.map(t => t.task)||[];
+                // }
+                // listTasks = _.unionBy(taskProjects, taskTickets, 'id');
+                listTasks = taskProjects;
+                if (listTasks && listTasks.length > 0) {
+                    if (workpackage) {
+                        listTasks = _.filter(listTasks,function (o) { return (typeof o.workPackageId !== "undefined" && o.workPackageId !== null && o.workPackageId !== 0) })
+                    }
+                    result = {
+                        data: listTasks,
+                        page: paging.page,
+                        size: paging.size,
+                        total: listTasks.length
+                    }
+                }
+                return result;
+            }}
+            value={value}
+            onChange={onChange}
+            className={className}
+            itemTemplate={(item) => itemTemplate(item)}
+            selectedItemTemplate={(item) => selectedTemplate(item)}
+        />
+    )
+}

@@ -1,0 +1,154 @@
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.4rem 0.2rem 0.4rem;;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--tiny-font-size);
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+
+    &.pill {
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+        border-radius: 50rem;
+    }
+
+    &.primary {
+        background-color: #556ee6;
+    }
+
+    &.success {
+        background-color: #34c38f;
+    }
+
+    &.info {
+        background-color: #50a5f1;
+    }
+
+    &.warning {
+        background-color: #f1b44c;
+    }
+
+    &.danger {
+        background-color: #f46a6a;
+    }
+
+    &.dark {
+        background-color: #343a40;
+    }
+
+    &.soft {
+        background-color: #343a40;
+
+        &.primary {
+            color: #556ee6;
+            background-color: rgba(85, 110, 230, 0.18);
+        }
+
+        &.success {
+            color: #34c38f;
+            background-color: rgba(52, 195, 143, 0.18);
+        }
+
+        &.info {
+            color: #50a5f1;
+            background-color: rgba(80, 165, 241, 0.18);
+        }
+
+        &.warning {
+            color: #f1b44c;
+            background-color: rgba(241, 180, 76, 0.18);
+        }
+
+        &.dark {
+            color: #343a40;
+            background-color: rgba(52, 58, 64, 0.18);
+        }
+
+        &.danger {
+            color: #f46a6a;
+            background-color: rgba(244, 106, 106, 0.18);
+        }
+    }
+
+    &.color {
+        border: 1px solid;
+
+        &.magenta {
+            color: #c41d7f;
+            background: #fff0f6;
+            border-color: #ffadd2;
+        }
+
+        &.red {
+            color: #cf1322;
+            background: #fff1f0;
+            border-color: #ffa39e;
+        }
+
+        &.volcano {
+            color: #d4380d;
+            background: #fff2e8;
+            border-color: #ffbb96;
+        }
+
+        &.orange {
+            color: #d46b08;
+            background: #fff7e6;
+            border-color: #ffd591;
+        }
+
+        &.gold {
+            color: #d48806;
+            background: #fffbe6;
+            border-color: #ffe58f;
+        }
+
+        &.lime {
+            color: #7cb305;
+            background: #fcffe6;
+            border-color: #eaff8f;
+        }
+
+        &.green {
+            color: #389e0d;
+            background: #f6ffed;
+            border-color: #b7eb8f;
+        }
+
+        &.cyan {
+            color: #08979c;
+            background: #e6fffb;
+            border-color: #87e8de;
+        }
+
+        &.blue {
+            color: #096dd9;
+            background: #e6f7ff;
+            border-color: #91d5ff;
+        }
+
+        &.geekblue {
+            color: #1d39c4;
+            background: #f0f5ff;
+            border-color: #adc6ff;
+        }
+
+        &.purple {
+            color: #531dab;
+            background: #f9f0ff;
+            border-color: #d3adf7;
+        }
+
+        &.grey {
+            color: var(--material-grey-7);
+            background: var(--material-grey-1);
+            border-color: var(--material-grey-5);
+        }
+    }
+}

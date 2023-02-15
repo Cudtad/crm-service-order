@@ -1,0 +1,161 @@
+.x-horizontal-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 0.35rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: calc(100% - 8px);
+        bottom: 0;
+        left: 4px;
+        background-color: var(--material-grey-5);
+    }
+
+    // top layer
+    > ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            position: relative;
+            display: block;
+            list-style: none;
+            padding: 0 0.25rem;
+            border-radius: var(--input-border-radius);
+
+            &.x-horizontal-menu-item {
+                font-weight: 500;
+                line-height: 18px;
+                border: 1px solid transparent;
+
+                a,
+                div {
+                    color: var(--primary-text);
+                }
+
+                .x-horizontal-menu-top-level {
+                    padding: 0.25rem;
+                }
+
+                .x-horizontal-menu-top-level-active {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+
+                    .bx {
+                        font-size: 18px;
+                        margin: 0 0.15rem;
+                    }
+                }
+
+                &.menu-active {
+                    background-color: var(--component-background-color-transparent);
+                    border-color: var(--material-grey-5);
+
+                    a,
+                    div {
+                        color: var(--primary-text);
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -2px;
+                        left: 0;
+                        height: 3px;
+                        width: 50%;
+                        background-color: var(--main-color);
+                        border-radius: 2px;
+                        margin-left: 25%;
+                        transition: all 300ms ease;
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: var(--component-background-color-transparent);
+                border-color: var(--material-grey-5);
+
+                &.x-horizontal-menu-item {
+                    a,
+                    div {
+                        color: rgba($color: #000000, $alpha: 0.87);
+                    }
+
+                    &.menu-active::before {
+                        width: 70%;
+                        margin-left: 15%;
+                    }
+                }
+
+                // show sub layers
+                & > ul {
+                    display: block;
+                }
+            }
+        }
+
+        // sub layers
+        ul {
+            position: absolute;
+            display: none;
+            width: auto;
+            top: 100%;
+            left: 0;
+            padding: 2px 0 0;
+            z-index: 99999;
+            background-color: #fff;
+            border-radius: var(--input-border-radius);
+            border: 1px solid #ccc;
+            box-shadow: var(--shadow-depth-8);
+
+            li {
+                position: relative;
+                display: block;
+                list-style: none;
+                white-space: nowrap;
+
+                a,
+                div {
+                    font-weight: 400;
+                    padding: 0.5rem 2rem 0.5rem 1rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .x-horizontal-menu-expand {
+                    position: absolute;
+                    right: 2px;
+                    top: calc(50% - 9px);
+                    font-size: 18px;
+                }
+
+                &.menu-active {
+                    a,
+                    div {
+                        font-weight: 500;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--material-grey-3);
+                    font-weight: 500;
+
+                    > ul {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

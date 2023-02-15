@@ -1,0 +1,14 @@
+.custom-field-detail-choose-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    .list-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 1fr;
+        margin-bottom: 0.25rem;
+        .row-action {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

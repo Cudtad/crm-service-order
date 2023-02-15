@@ -1,0 +1,31 @@
+.task-blocks {
+    padding: 0.5rem;
+
+    .task-block {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+
+        &:last-child {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .task-block-title {
+        display: flex;
+        align-items: center;
+        .bx {
+            font-size: 20px;
+            color: var(--material-grey-7);
+            margin-right: 0.25rem;
+        }
+    }
+
+    .task-block-content {
+        margin-left: calc(20px + 0.25rem);
+    }
+}
+
+.task-base-x-toolbar{
+    margin: 2px 0.5rem 0.5rem 0.5rem;
+}

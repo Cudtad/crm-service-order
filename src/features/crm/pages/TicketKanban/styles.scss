@@ -1,0 +1,101 @@
+.link-button, .link-button-small {
+    display: block !important;
+}
+.ticket-kanban-container {
+    //background-color: #eaedf3;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow: auto;
+
+    //.x-kanban-state {
+    //    display: inline-flex;
+    //    flex-direction: column;
+    //    height: auto;
+    //    margin: 5px 5px;
+    //    position: relative;
+    //    max-height: calc(100% - 10px);
+    //    padding: 0.25rem;
+    //    background-color: #f2f3f7;
+    //    border: 1px solid #ccc;
+    //    border-radius: 4px;
+    //    overflow: auto;
+    //
+    //    header {
+    //        padding: 0.5rem 0.25rem 0 0.25rem;
+    //    }
+    //
+    //    .card {
+    //        border-radius: 3px;
+    //    }
+    //}
+
+    .react-trello-lane{
+        border: none;
+    }
+
+    .border-no-radius{
+        border-radius: 0px !important;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .project-issue-kanban {
+        //width: 100% !important;
+        width: fit-content !important;
+
+        div:first-child {
+            //width: fit-content !important;
+            //margin-left: auto !important;
+            //margin-right: auto !important;
+        }
+
+        .smooth-dnd-container {
+            .react-trello-lane {
+                .create-issue {
+                    color: #78909c;
+                    cursor: pointer;
+                    transition: transform .2s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        color: #34c38f;
+                    }
+                }
+            }
+        }
+
+        .smooth-dnd-draggable-wrapper {
+            .card {
+                width: 310px;
+
+                .description {
+                    img {
+                        max-width: 200px !important;
+                        height: auto !important;;
+                    }
+                }
+
+                &.issue-very-low {
+                    border-left: 5px solid #475F7B;
+                }
+
+                &.issue-low {
+                    border-left: 5px solid #00CFDD;
+                }
+
+                &.issue-medium {
+                    border-left: 5px solid #5A8DEE;
+                }
+
+                &.issue-high {
+                    border-left: 5px solid #FDAC41;
+                }
+
+                &.issue-very-high {
+                    border-left: 5px solid #FF5B5C;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{{- $svcName := .Values.xdp.name }}
+{{- $svcPort := .Values.service.port }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.xdp.name }}
+  labels:
+    {{- include "labels" . | nindent 4 }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: {{ .Values.xdp.ingress.host | quote }}
+      http:
+        paths:
+          - path: {{ .Values.xdp.ingress.path }}
+            {{- if and .Values.xdp.ingress.pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
+            pathType: {{ .Values.xdp.ingress.pathType }}
+            {{- end }}
+            backend:
+              {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
+              service:
+                name: {{ $svcName }}
+                port:
+                  number: {{ $svcPort }}
+              {{- else }}
+              serviceName: {{ $svcName }}
+              servicePort: {{ $svcPort }}
+              {{ end }}

@@ -1,0 +1,47 @@
+.rule-action-settings {
+    .tab-menu {
+        .p-tabview-nav li .p-tabview-nav-link {
+            padding: 0 !important;
+        }
+
+        .rule-action-tab-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+    .rule-action-list {
+        .p-listbox {
+            min-height: 100%;
+
+            .p-listbox-item {
+                padding: 0.125rem 0.5rem !important;
+            }
+        }
+
+        .rule-action-list-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            .item-info {
+                display: flex;
+                align-items: center;
+            }
+
+            .item-action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .rule-action-not-selected {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}

@@ -1,0 +1,76 @@
+.crm-service-home-page {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 5rem 0 0 0;
+    flex-direction: column;
+    min-height: 100%;
+
+    .greeting-image {
+        max-width: 800px;
+        max-height: 300px;
+    }
+
+    .greeting {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 16px 0 8px 0;
+    }
+
+    .greeting-sentence {
+        font-size: 16px;
+    }
+
+    .menu-container {
+        display: flex;
+        width: 70%;
+        flex-wrap: wrap;
+        margin: 2rem 0 0 0;
+        justify-content: space-between;
+        a{
+            color: var(--app-dark-color) !important;
+        }
+        .menu{
+            flex: 0 0 33%;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: var(--app-dark-color) !important;
+        }
+        .menu-no-child{
+        }
+        .menu-has-child{
+        }
+        .menu-header{
+            padding: 5px;
+            font-weight: 600;
+            font-size: larger;
+            border-bottom: 1px solid;
+        }
+
+        .menu-child{
+            padding: 5px;
+            margin-left: 15px;
+        }
+        .menu-item {
+            flex: 0 0 33%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: var(--main-color);
+            margin: 0 0 1rem 0;
+            padding: 4px 6px;
+            border-radius: 4px;
+
+            .bx,.fa {
+                font-size: 24px;
+                margin-right: 6px;
+            }
+
+            &:hover {
+                background: #e5e5e5;
+            }
+        }
+    }
+}

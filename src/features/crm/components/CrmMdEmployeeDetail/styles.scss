@@ -1,0 +1,63 @@
+.employee-global-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    position: relative;
+
+    .avatar-selection {
+        position: absolute;
+        left: 26px;
+        top: 26px;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--material-grey-3);
+        box-shadow: var(--shadow-depth-4);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .bx {
+            font-size: var(--big-icon-size);
+        }
+    }
+
+    .employee-col {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .x-layout-row {
+            margin-bottom: 0.25rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .employee-name {
+            font-size: var(--biggest-font-size);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .employee-number {
+            color: rgba(255, 255, 255, 0.8);
+            margin-left: 0.25rem;
+        }
+
+        .employee-position {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .x-avatar {
+        .x-avatar-image {
+            box-shadow: 0 0 0 2px #fff;
+        }
+    }
+}

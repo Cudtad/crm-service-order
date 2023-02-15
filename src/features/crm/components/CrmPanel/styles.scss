@@ -1,0 +1,10 @@
+.crm-panel {
+    box-shadow: none;
+    .p-panel-content {
+        padding: 0px;
+        border-width: 0;
+    }
+    .crm-panel-button-clear:hover {
+        background-color: #047377;
+    }
+}

@@ -1,0 +1,91 @@
+.x-file-preview-list {
+    display: flex;
+    margin: -0.25rem;
+    padding: 0.25rem 0 0 0;
+    flex-wrap: wrap;
+
+    .x-comments-attachments-remove {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        z-index: 9999;
+        background-color: #fff;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            border-color: var(--material-red);
+
+            .bx {
+                color: var(--material-red) !important;
+            }
+        }
+    }
+
+    .x-file-item {
+        display: flex;
+        margin: 0.25rem;
+        box-shadow: 0 0 0 1px var(--material-grey-5);
+        border-radius: var(--border-radius);
+        position: relative;
+        overflow: hidden;
+
+        .x-file-not-image {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: var(--border-radius);
+
+            .file-name {
+                width: 100%;
+                margin-top: 0.5rem;
+                padding: 0 4px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 0.8125rem;
+                color: var(--material-grey-7);
+                text-align: center;
+            }
+        }
+
+        img {
+            border-radius: var(--border-radius);
+        }
+
+        .x-file-preview-play-button {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            font-size: var(--big-icon-size);
+
+            .bx {
+                color: rgba(255, 255, 255, 0.87);
+            }
+        }
+
+        .download-overlay {
+            position: absolute;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            width: 100%;
+            display: flex;
+            padding: 0.25rem 0;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            bottom: -50px;
+            transition: all 300ms ease-in-out;
+        }
+
+        &:hover {
+            .download-overlay {
+                bottom: 0;
+            }
+        }
+    }
+}

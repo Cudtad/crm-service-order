@@ -1,0 +1,17 @@
+.disable-opacity {
+    opacity: 1 !important;
+    border: 1px dotted rgba(0, 0, 0, 0.1) !important;
+}
+.user-ac{
+    &.p-autocomplete {
+        ul.p-disabled {
+            @extend .disable-opacity;
+            input{
+                // display: none !important;
+            }
+        }
+    }
+    .p-button-icon {
+        color: rgba(0,0,0,.6)
+    }
+}

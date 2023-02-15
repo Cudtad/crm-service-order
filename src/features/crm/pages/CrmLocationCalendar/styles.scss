@@ -1,0 +1,844 @@
+$color-due-ontime: #34c38f;
+$color-due-overdue: #f44336;
+$color-due-due: #fb8c00;
+$color-icon-action: #33428a;
+$color-icon-action-hover: #116aff;
+
+.project-application {
+    // background-color: white;
+    > .x-layout-top {
+        z-index: 2;
+    }
+}
+.project-resources-name {
+    display: flex;
+    align-items: center;
+    margin-right: 0.25rem;
+
+    img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px var(--material-grey-4);
+        z-index: 1;
+        margin-right: -6px;
+    }
+}
+.project-management-container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 0.75rem);
+    left: calc(100% + 20px);
+    transition: left 0.3s;
+    z-index: 4;
+    background-color: #edf0f5;
+
+    &.start-manage {
+        transition: left 0.5s;
+        left: 0;
+    }
+
+    .project-management-wrapper {
+        padding: 0 0.75rem 0.25rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        .project-pages-container {
+            flex: 1 1 auto;
+        }
+
+        .project-management-navigation {
+            .project-management-main-tab {
+                .p-tabview-nav {
+                    .p-unselectable-text {
+                        .p-tabview-nav-link {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .project-management-tab-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        //overflow: auto;
+
+        .project-information {
+            .project-information-icon {
+                font-size: 20px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+
+            .project-information-header {
+                margin-left: 12px;
+                font-size: 15px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .p-splitbutton {
+            .p-button {
+                &.p-button-icon-only {
+                    width: 2.6rem !important;
+                }
+            }
+        }
+
+        .button-filter {
+            height: 30px;
+            width: 30px;
+
+            .p-button-icon {
+                &::before {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .user-role-group {
+        }
+    }
+
+    .project-management-tab-cost-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+
+        .version-create {
+            color: #78909c;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.2);
+                color: $color-due-ontime;
+            }
+        }
+
+        .version-request {
+            color: #78909c;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.2);
+                color: $color-due-ontime;
+            }
+        }
+
+        .version-compare {
+            color: #78909c;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.2);
+                color: $color-due-due;
+            }
+        }
+
+        .version-approve {
+            color: #78909c;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.2);
+                color: $color-icon-action-hover;
+            }
+        }
+
+        .button-filter {
+            height: 30px;
+            width: 30px;
+
+            .p-button-icon {
+                &::before {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .project-management-toolbar {
+        background-color: #fff;
+        display: flex;
+        //justify-content: space-between;
+        align-items: center;
+
+        .bx {
+            font-size: 20px;
+            &::before {
+                color: rgba(0, 0, 0, 0.6) !important;
+            }
+        }
+    }
+
+    .task-progress-due {
+        color: $color-due-due;
+    }
+
+    .task-progress-overdue {
+        color: $color-due-overdue;
+    }
+
+    .task-progress-ontime {
+        color: $color-due-ontime;
+    }
+}
+
+// wbs
+.project-wbs-wrapper {
+    .project-column-definition {
+        display: grid;
+        grid-template-columns: 4vw 55vw 5vw repeat(6, 10vw);
+        //padding-top: 0.5rem;
+        //padding-bottom: 0.5rem;
+    }
+
+    .project-columns-header {
+        //border: 1px solid #ccc;
+        //border-bottom-width: 2px;
+    }
+
+    .project-container {
+        &.p-panel,
+        .p-panel {
+            box-shadow: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+
+            .p-panel-content {
+                padding: 0;
+            }
+        }
+
+        .project-header {
+            position: relative;
+
+            .project-actions {
+                visibility: hidden;
+                display: flex;
+                //position: absolute;
+                //right: 10rem;
+                //top: -0.25rem;
+                margin-left: 0.25rem;
+                //height: calc(100% + 0.5rem);
+                border-right: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                align-items: center;
+                z-index: 1;
+
+                .project-action-add-phase {
+                    padding: 0.5rem;
+                    transition: transform 0.2s;
+
+                    // &:hover {
+                    //     transform: scale(1.2);
+                    // }
+
+                    &::after {
+                        content: var(--bx-plus);
+                        font-size: 12px;
+                        font-weight: bolder;
+                        font-family: "boxicons";
+                        position: absolute;
+                        margin-left: -25px;
+                        margin-top: -6px;
+                        color: #46ad51;
+                    }
+                }
+            }
+
+            .project-expand {
+                // visibility: hidden;
+                display: flex;
+                margin-left: 0.25rem;
+                border-right: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                align-items: center;
+                z-index: 1;
+                margin-left: auto;
+                .project-action-expand {
+                    padding: 0.5rem;
+                }
+            }
+
+            &:hover {
+                background-color: #f5f5f5;
+                // .project-header-text {
+                //     color: #ff6f00 !important;
+                // }
+                .project-actions {
+                    visibility: visible;
+                }
+            }
+
+            .project-header-date {
+                width: 60%;
+            }
+
+            .project-progressbar {
+                position: absolute;
+                width: calc(100% - 2.5rem - 550px);
+                margin-left: 2.25rem;
+                bottom: 1px;
+                background-color: #d5d5d5;
+                border-radius: 2px;
+
+                .p-progressbar-value {
+                    background-color: #ffa159;
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        .project-milestones {
+            .cell {
+                margin-left: 2px;
+                border-right: 1px solid #bbbbbb;
+            }
+            .cell-detail {
+                padding-left: 1rem;
+                border-right: 1px solid #bbbbbb;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+            .project-milestones-header {
+                position: relative;
+                height: 32px;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                    .project-milestone-text {
+                        color: $color-icon-action;
+                    }
+                }
+
+                .project-milestone-date {
+                    width: 60%;
+                }
+
+                .project-milestones-bone {
+                    margin-left: 2rem;
+                    padding-left: 4px;
+                    position: relative;
+
+                    .phase-detail {
+                        &::before {
+                            content: "--";
+                            position: absolute;
+                            height: calc(100% - 8px);
+                            border-left: 2px dashed #ccc;
+                            top: 0;
+                            left: -1rem;
+                            padding-top: 8px;
+                            color: #ccc;
+                            font-weight: bold;
+                        }
+                        &.is-last-item {
+                            &::before {
+                                content: "--";
+                                position: absolute;
+                                top: 0;
+                                height: 0.5rem;
+                                border-left: 2px dashed #ccc;
+                                border-bottom: 2px dashed #ccc;
+                                left: -1rem;
+                                color: transparent;
+                                font-weight: bold;
+                            }
+                        }
+                        .phase-actions {
+                            visibility: hidden;
+                            display: flex;
+                            position: absolute;
+                            right: 5px;
+                            //top: -0.25rem;
+                            // margin-left: -5rem;
+                            // margin-top: 3px;
+                            height: 100%;
+                            align-items: center;
+                            z-index: 1;
+                            font-size: 1.2rem;
+
+                            .phase-action-add-work-package {
+                                transition: transform 0.2s;
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+
+                                &::after {
+                                    content: var(--bx-plus);
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    font-family: "boxicons";
+                                    position: absolute;
+                                    margin-left: -25px;
+                                    margin-top: -5px;
+                                    color: #46ad51;
+                                }
+
+                                &:hover {
+                                    color: $color-icon-action-hover;
+                                }
+                            }
+
+                            .phase-action-edit {
+                                transition: transform 0.2s;
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+
+                                &:hover {
+                                    color: $color-due-due;
+                                }
+                            }
+
+                            .phase-action-remove {
+                                transition: transform 0.2s;
+
+                                &:hover {
+                                    color: $color-due-overdue;
+                                    transform: scale(1.2);
+                                }
+                            }
+
+                            i.bx {
+                                color: $color-icon-action;
+                            }
+                        }
+
+                        &:hover {
+                            .phase-actions {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+
+                .milestone-progressbar {
+                    position: absolute;
+                    width: calc(100% - 4.25rem - 50px);
+                    height: 2px;
+                    margin-left: 4rem;
+                    bottom: 1px;
+                    background-color: #d5d5d5;
+                    border-radius: 1px;
+                    padding: 0px;
+
+                    .p-progressbar-value {
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            .work-package-container {
+                position: relative;
+                height: 32px;
+                &:hover {
+                    background-color: #f5f5f5;
+
+                    .work-package-text {
+                        color: $color-icon-action;
+                    }
+                }
+
+                .work-package-detail {
+                    position: relative;
+
+                    .work-package-actions {
+                        visibility: hidden;
+                        display: flex;
+                        position: absolute;
+                        right: 5px;
+                        //top: -0.25rem;
+                        // margin-left: -5rem;
+                        // margin-top: 3px;
+                        height: 100%;
+                        align-items: center;
+                        z-index: 1;
+                        font-size: 1.2rem;
+
+                        .work-package-action-add-task,
+                        .work-package-action-add-children {
+                            &::after {
+                                content:var(--bx-plus);
+                                font-size: 12px;
+                                font-weight: bolder;
+                                font-family: "boxicons";
+                                position: absolute;
+                                margin-left: -23px;
+                                margin-top: -2px;
+                                color: #46ad51;
+
+                            }
+
+                            transition: transform 0.2s;
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                        .work-package-action-add-children,.work-package-action-copy{
+                            transition: transform 0.2s;
+
+                            &:hover {
+                                transform: scale(1.2);
+                                color: $color-icon-action-hover;
+                            }
+                        }
+                        .work-package-action-add-task {
+                            transition: transform 0.2s;
+
+                            &:hover {
+                                transform: scale(1.2);
+                                color: $color-due-due;
+                            }
+                        }
+
+                        .work-package-action-remove {
+                            transition: transform 0.2s;
+
+                            &:hover {
+                                transform: scale(1.2);
+                                color: $color-due-overdue;
+                            }
+                        }
+                        i.bx {
+                            color: $color-icon-action;
+                        }
+                    }
+
+                    &:hover {
+                        .work-package-actions {
+                            visibility: visible;
+                        }
+                    }
+
+                    .work-package-info {
+                        //margin-left: 1rem;
+                        position: relative;
+
+                        &::before {
+                            content: "--";
+                            position: absolute;
+                            height: calc(100% - 8px);
+                            border-left: 2px dashed #ccc;
+                            top: 0;
+                            left: -3rem;
+                            padding-top: 8px;
+                            color: #ccc;
+                            font-weight: bold;
+                        }
+
+                        &.is-last-item {
+                            &::before {
+                                content: "--";
+                                position: absolute;
+                                top: 0;
+                                height: 0.5rem;
+                                border-left: 2px dashed #ccc;
+                                border-bottom: 2px dashed #ccc;
+                                left: -3rem;
+                                color: transparent;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                //&::before {
+                //    content: "--";
+                //    position: absolute;
+                //    height: calc(100% - 0.5rem - 4px);
+                //    border-left: 2px dashed #ccc;
+                //    left: 2.5rem;
+                //    padding-top: 0.5rem;
+                //    color: #ccc;
+                //    font-weight: bold;
+                //}
+                //
+                //&.is-last-item {
+                //    &::before {
+                //        content: "--";
+                //        position: absolute;
+                //        height: 0.5rem;
+                //        border-left: 2px dashed #ccc;
+                //        border-bottom: 2px dashed #ccc;
+                //        top: -0.25rem;
+                //        left: -0.75rem;
+                //        color: transparent;
+                //        font-weight: bold;
+                //    }
+                //}
+
+                .work-packages-bone {
+                    margin-left: 3.25rem;
+                    padding-left: 2px;
+                }
+
+                .work-package-progressbar {
+                    position: absolute;
+                    width: calc(100% - 4.25rem - 550px);
+                    margin-left: 4rem;
+                    bottom: 1px;
+                    background-color: #d5d5d5;
+                    border-radius: 2px;
+
+                    .p-progressbar-value {
+                        background-color: #34c38f;
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            .milestone-task-container {
+                border-bottom: 1px solid #ccc;
+                position: relative;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+
+                &.project-column-definition {
+                    //padding-top: 0.25rem;
+                    //padding-bottom: 0.25rem;
+                }
+
+                //&::before {
+                //    content: "";
+                //    position: absolute;
+                //    height: calc(100%);
+                //    border-left: 2px dashed #ccc;
+                //    left: 1.25rem;
+                //    display: flex;
+                //    align-items: center;
+                //    color: #ccc;
+                //    font-weight: bold;
+                //}
+
+                .milestone-task-detail {
+                    position: relative;
+                    height: 32px;
+
+                 
+                    .milestone-task-item-actions {
+                        visibility: hidden;
+                        display: flex;
+                        position: absolute;
+                        right: 0.5rem;
+                        // top: -0.25rem;
+                        height: 100%;
+                        align-items: center;
+                        z-index: 1;
+                        font-size: 1.5rem;
+
+                        .request-item-action-edit, .request-item-action-copy {
+                            
+                            transition: transform 0.2s;
+                            &:hover {
+                                transform: scale(1.2);
+                                color: $color-due-due;
+                            }
+                        }
+                        i.bx {
+                            color: $color-icon-action;
+                        }
+    
+                    }
+
+                    &:hover {
+                        .milestone-task-item-actions {
+                            visibility: visible;
+                        }
+                    }
+
+                    .milestone-task-item-info {
+                        margin-left: 2.5rem;
+                        position: relative;
+
+                        &::before {
+                            content: "--";
+                            position: absolute;
+                            height: calc(100% - 5px);
+                            border-left: 2px dashed #ccc;
+                            top: 0.25rem;
+                            left: -0.5rem;
+                            padding-top: calc(0.25rem - 1px);
+                            color: #ccc;
+                            font-weight: bold;
+                        }
+
+                        &.is-last-item {
+                            &::before {
+                                content: "--";
+                                position: absolute;
+                                height: 0.5rem;
+                                border-left: 2px dashed #ccc;
+                                border-bottom: 2px dashed #ccc;
+                                top: 0.25rem;
+                                left: -0.5rem;
+                                color: transparent;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .task-workflow-info {
+                            display: block;
+                            span {
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+
+                // &:last-child {
+                //     .milestone-task-item-info {
+                //         &::before {
+                //             content: "--";
+                //             position: absolute;
+                //             height: 0.5rem;
+                //             border-left: 2px dashed #ccc;
+                //             border-bottom: 2px dashed #ccc;
+                //             top: -0.25rem;
+                //             left: -0.75rem;
+                //             color: transparent;
+                //             font-weight: bold;
+                //         }
+                //     }
+                // }
+
+                &.task-level-1 {
+                    .milestone-task-item-info {
+                        margin-left: 5rem;
+                    }
+                }
+
+                &.task-level-2 {
+                    .milestone-task-item-info {
+                        margin-left: 6.5rem;
+                    }
+                }
+            }
+
+            // &:last-child {
+            //     .project-milestones-header {
+            //         &::before {
+            //             height: 0.5rem !important;
+            //             color: transparent;
+            //             border-bottom: 2px dashed #ccc;
+            //         }
+            //     }
+            // }
+        }
+    }
+}
+
+// general information
+.project-management-container.general-information {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.button-edit {
+    .p-button-icon {
+        font-size: 20px;
+    }
+}
+
+.w-120 {
+    width: 120px !important;
+}
+
+.w-180 {
+    width: 180px !important;
+}
+
+.w-220 {
+    width: 220px !important;
+}
+
+.w-320 {
+    width: 320px !important;
+}
+
+.w-500 {
+    width: 500px !important;
+}
+.check-decoration {
+    text-decoration: line-through;
+}
+.p-inputtext.p-component, .p-input-filled .p-float-label label {
+    font-size: 12px;
+}
+.project-gantt-wrapper .gantt_grid_scale .gantt_grid_head_cell{
+    text-align: center !important;
+}
+.milestone-task-item-info , .project-milestone-text{
+    margin-right: 50px
+}
+.work-package-info{
+        margin-right: 100px
+}
+
+.left-menu-navigation {
+    margin: 0px 0px 8px 0px;
+    background-color: rgba(9, 30, 66, 0.04);
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-height: 28px;
+    max-width: 230px;
+    overflow: hidden;
+    padding: 8px 12px 8px 4px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+    border-bottom: 2px solid;
+    border-bottom-color: rgba(9, 30, 66, 0.04);
+
+    &:hover {
+        background-color: rgba(9, 30, 66, 0.08);
+        box-shadow: none;
+    }
+
+    i.bx {
+        font-size: 20px;
+        margin-right: 6px;
+    }
+}
+.left-menu-navigation-selected {
+    border-bottom: 2px solid;
+    border-bottom-color: #556ee6;
+
+    &:hover {
+        background-color: rgba(9, 30, 66, 0.08);
+        box-shadow: none;
+        border-bottom: 2px solid;
+        border-bottom-color: #556ee6;
+    }
+    span {
+        color:#556ee6;
+    }
+    i.bx {
+        color:#556ee6;
+    }
+}

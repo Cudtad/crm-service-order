@@ -1,0 +1,39 @@
+.page-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+    .title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #495057;
+    }
+
+    .breadcrumb {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        align-items: center;
+
+        .breadcrumb-item {
+            a {
+                color: #495057;
+            }
+        }
+
+        .breadcrumb-item + .breadcrumb-item {
+            padding-left: 0.5rem;
+        }
+
+        .breadcrumb-item + .breadcrumb-item:before {
+            float: left;
+            padding-right: 0.5rem;
+            color: #74788d;
+            content: "/";
+            line-height: 20px;
+            opacity: 0.5;
+        }
+    }
+}

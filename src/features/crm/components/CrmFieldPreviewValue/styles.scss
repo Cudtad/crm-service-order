@@ -1,0 +1,9 @@
+.field-preview-label {
+    width: 155px;
+    min-width: 155px;
+    .field-require::after {
+        color: #f46a6a;
+        content: "*";
+        margin-left: 2px;
+    }
+}

@@ -1,0 +1,191 @@
+.entity-field-list {
+    .p-listbox {
+        min-height: 100%;
+
+        .p-listbox-item {
+            padding: 0.25rem 0.5rem !important;
+            border-bottom: 1px solid var(--material-grey-4) !important;
+        }
+    }
+
+    .entity-field-list-item {
+        display: grid;
+        grid-template-columns: 24px 1fr auto;
+
+        .item-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--material-grey);
+            font-size: 13px;
+
+            .fa,
+            .fas,
+            .far {
+                font-size: 14px;
+            }
+        }
+
+        .item-info {
+            padding: 0 0 0 0.5rem;
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+        }
+
+        .item-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.custom-field-empty-grant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.granted-fields-orderable {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+
+    .granted-fields-item {
+        flex: 0 0 100%;
+        word-break: break-all;
+        position: relative;
+        padding: 0.25rem 0.125rem;
+        height: 68px;
+        min-width: 0;
+        cursor: grab;
+        background-color: transparent;
+
+        &.flex-25 {
+            flex: 0 0 25%;
+        }
+
+        &.flex-33 {
+            flex: 0 0 33.333333333333333333333333%;
+        }
+
+        &.flex-50 {
+            flex: 0 0 50%;
+        }
+
+        &.flex-75 {
+            flex: 0 0 75%;
+        }
+
+        &.flex-100 {
+            flex: 0 0 100%;
+        }
+
+        .granted-fields-item-inner {
+            outline: 2px solid #ccc;
+            outline-offset: -2px;
+            padding: 0.25rem 0.5rem;
+            background-color: #fff;
+
+            .custom-field-name {
+                i {
+                    font-size: 16px;
+                }
+
+                i.far,
+                i.fas {
+                    color: rgba($color: #000000, $alpha: 0.6);
+                }
+
+                .custom-field-type-number {
+                    color: rgba($color: #000000, $alpha: 0.6);
+                    font-weight: 900;
+                    word-break: keep-all;
+                }
+
+                .delete-custom-field {
+                    color: rgba($color: #000000, $alpha: 0.6);
+                    height: 100%;
+
+                    i.bx {
+                        font-size: 16px;
+
+                        &:hover {
+                            transition: transform 0.1s;
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    &:hover {
+                        transition: color 0.3s;
+                        color: #f46a6a;
+                        cursor: pointer;
+                    }
+                }
+
+                .field-name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 24px;
+
+                    i.bx {
+                        padding-bottom: 2px;
+                        margin-right: 4px;
+                        font-size: 18px;
+                        color: rgba($color: #000000, $alpha: 0.5);
+                    }
+                }
+            }
+
+            .custom-field-config {
+                display: flex;
+                align-items: center;
+
+                .config-field-config-item {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 12px;
+                    padding: 4px 0;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #f1f1f1;
+                    }
+
+                    .config-field-config-item-text {
+                        margin-left: 4px;
+                        font-size: 13px;
+                    }
+
+                    i.far,
+                    i.fas,
+                    i.fab {
+                        font-size: 14px;
+                        color: #a9a9a9;
+
+                        &.fa-diaspora {
+                            &.enable {
+                                color: #f46a6a;
+                            }
+                        }
+
+                        &.fa-columns {
+                            color: #2e7d32;
+                        }
+
+                        &.fa-eye {
+                            &.enable {
+                                color: #2196f3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

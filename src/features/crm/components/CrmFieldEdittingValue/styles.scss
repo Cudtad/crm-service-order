@@ -1,0 +1,20 @@
+.field-preview-label {
+    width: 155px;
+    .field-preview-label-text {
+        padding-top: 4px;
+    }
+    .field-require::after {
+        color: #f46a6a;
+        content: "*";
+        margin-left: 2px;
+    }
+}
+.btn-add-field {
+    width: 28px;
+    height: 28px;
+    padding: auto;
+    color: var(--material-grey-5) !important;
+    .p-button-icon {
+        color: var(--main-color);
+    }
+}

@@ -1,0 +1,264 @@
+.x-todo-container {
+    .x-todo {
+        .x-todo-box {
+            padding: 0;
+            margin-bottom: 0.25rem;
+
+            .x-todo-group {
+                box-shadow: none;
+
+                .x-todo-action {
+                    opacity: 1;
+                    display: flex;
+                    width: fit-content;
+                    align-items: center;
+                }
+
+                .x-todo-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0.25rem 0.5rem;
+
+                    &:hover {
+                        background-color: #f2f3f7;
+
+                        .x-todo-action {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .p-panel-content {
+                    padding: 0 0 0.25rem 0;
+                }
+
+                .x-todo-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 0.5rem 0 4rem;
+
+                    .x-todo-item-info {
+                        display: flex;
+                        align-items: center;
+                        flex: 1 1 auto;
+                    }
+
+                    &:hover {
+                        background-color: #f2f3f7;
+
+                        .x-todo-action {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .x-todo-check {
+                    transition: 0.6s;
+
+                    &.x-todo-done-animation {
+                        animation: zoominoutsinglefeatured 0.3s;
+                    }
+                }
+
+                .x-todo-input-wrapper {
+                    position: relative;
+                    width: fit-content;
+                    max-width: 100%;
+                    word-break: break-all;
+                    height: 32px;
+                    color: transparent;
+                    padding: 0 0.55rem;
+                    white-space: pre-wrap;
+
+                    .x-todo-input {
+                        border-color: transparent;
+                        font-weight: 500;
+                        color: var(--material-grey-7);
+                        position: absolute;
+                        width: 100%;
+                        background-color: transparent;
+                        left: 0;
+
+                        &.for-item {
+                            font-weight: 400;
+                        }
+
+                        &::placeholder {
+                            font-weight: 400;
+                            color: var(--material-grey);
+                            font-style: italic;
+                        }
+
+                        &:hover {
+                            border-color: #ccc;
+                        }
+
+                        &:focus {
+                            border-color: var(--material-blue);
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        top: 50%;
+                        left: 0.45rem;
+                        border-top: 2px solid #ccc;
+                        transition: width 0.3s;
+                    }
+
+                    &.completed {
+                        .x-todo-input {
+                            color: var(--material-grey);
+                            font-weight: 400;
+                        }
+                        &::before {
+                            width: calc(100% - 0.75rem);
+                        }
+                    }
+                }
+            }
+
+            .x-todo-deadline-text {
+                white-space: nowrap;
+            }
+
+            .x-todo-assign-assigned {
+                display: flex;
+                align-items: center;
+                margin-right: 0.25rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 1px var(--material-grey-4);
+                    z-index: 1;
+                    margin-right: -6px;
+                }
+            }
+        }
+    }
+
+    .x-todo-add-link-button {
+        opacity: 0.8;
+        color: var(--material-blue-9);
+        font-size: 0.84375rem;
+        margin-top: 0.25rem;
+        width: fit-content;
+
+        &.for-item {
+            padding: 0 0.5rem 0 4rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+}
+
+.x-todo-deadline-panel {
+    .p-overlaypanel-content {
+        padding: 0;
+    }
+
+    .x-todo-calendar-month-navigator {
+        .p-dropdown-label {
+            padding: 0.35rem;
+        }
+    }
+
+    .x-todo-calendar-year-navigator {
+        margin-left: 0.25rem;
+
+        .p-dropdown-label {
+            padding: 0.35rem;
+        }
+    }
+
+    &::before,
+    &::after {
+        display: none;
+    }
+}
+
+.x-todo-assign-panel {
+    width: 300px;
+    height: 400px;
+    background-color: #f2f3f7;
+
+    .x-todo-assign-search {
+        width: 100%;
+        padding: 0.35rem 0.5rem !important;
+    }
+
+    .x-todo-assign-selected-panel {
+        max-height: 150px;
+    }
+
+    .x-todo-assign-user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.25rem 1px;
+
+        &:hover {
+            background-color: #f2f3f7;
+        }
+
+        .x-todo-assign-user-info {
+            display: flex;
+            align-items: center;
+
+            .x-todo-assign-user-avatar {
+                width: 24px;
+                height: 24px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 0.25rem;
+                box-shadow: 0 0 0 1px var(--material-grey-3);
+            }
+        }
+    }
+
+    .x-todo-assign-suggesstion-box {
+        overflow: auto;
+        height: 100%;
+    }
+
+    .x-todo-assign-selected-box {
+        overflow: auto;
+        max-height: 150px;
+    }
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    .p-overlaypanel-content {
+        padding: 0.5rem;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}

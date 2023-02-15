@@ -1,0 +1,70 @@
+.history-component-container {
+    padding: 0.75rem;
+    .history-item {
+        position: relative;
+        padding: 0 0 1.5rem 1rem;
+        border-left: 2px dashed #dadce0;
+        margin: 0 0.75rem;
+        display: flex;
+        align-items: start;
+
+        .event-timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            z-index: 1;
+            font-size: 16px;
+
+            // i.bx::before {
+            //     background-color: #fff;
+            // }
+        }
+
+        .history-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+        }
+
+        .history-time {
+            flex: 0 0 142px;
+        }
+
+        .history-detail {
+            flex: 1 1 auto;
+
+            .empty-value {
+                white-space: nowrap;
+            }
+        }
+
+        &:last-child {
+            border-color: transparent;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -2px;
+                width: 10px;
+                height: 10px;
+                border-left: 2px dashed #dadce0;
+            }
+        }
+    }
+
+    .complete {
+        color: rgba(5, 96, 189, 0.2);
+    }
+
+    .pending {
+        color: rgba(236, 147, 50, 0.2);
+    }
+
+    .in-progress {
+        color: rgba(62, 132, 16, 0.95);
+    }
+
+    .over-due {
+        color: rgba(252, 49, 20, 0.81);
+    }
+}

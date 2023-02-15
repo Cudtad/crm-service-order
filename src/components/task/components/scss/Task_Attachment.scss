@@ -1,0 +1,133 @@
+.task-attachment {
+  // .task-attachment-detail {
+
+  //     .task-attachment-group {
+  //         display: flex;
+  //         align-items: center;
+  //         padding: 0.25rem 0.5rem;
+  //         .bx {
+  //             font-size: var(--icon-size);
+  //             color: var(--material-grey);
+  //             margin-right: 0.25rem;
+  //         }
+  //     }
+
+  //     .task-attachment-item {
+  //         border-top: 1px solid #ccc;
+  //         display: grid;
+  //         grid-template-columns: 50px 1fr;
+  //         background-color: #fff;
+
+  //         .task-attachment-selection {
+  //             display: flex;
+  //             align-items: center;
+  //             justify-content: center;
+  //             border-right: 1px solid #ccc;
+  //         }
+
+  //         .task-attachment-content {
+  //             padding: 0.25rem;
+  //         }
+
+  //         &.task-attachment-view {
+  //             .task-attachment-content {
+  //                 padding: 0;
+  //                 display: grid;
+  //                 grid-template-columns: 1fr 90px;
+
+  //                 .task-attachment-info {
+  //                     padding: 0.25rem;
+
+  //                     .task-attachment-name {
+  //                         display: flex;
+  //                         align-items: center;
+  //                     }
+
+  //                     .task-attachment-file {
+  //                         padding-left: calc(16px + 0.25rem);
+  //                     }
+
+  //                     .file-icon {
+  //                         font-size: 20px;
+  //                         max-width: 24px;
+  //                         max-height: 24px;
+  //                         margin-right: 0.25rem;
+  //                     }
+
+  //                     .task-attachment-separator {
+  //                         margin-right: 0.5rem;
+  //                     }
+  //                 }
+  //                 .task-attachment-action {
+  //                     padding: 0 0.5rem;
+  //                     display: flex;
+  //                     align-items: center;
+  //                     justify-content: center;
+  //                     border-left: 1px solid #ccc;
+  //                 }
+  //             }
+
+  //             &:hover {
+  //                 background-color: var(--material-grey-2);
+  //             }
+
+  //             &.new-item {
+  //                 background-color: var(--material-green-1);
+  //             }
+
+  //             &.edit-item {
+  //                 background-color: var(--material-orange-1);
+  //             }
+  //         }
+  //     }
+
+  //     .task-attachment-button {
+  //         display: flex;
+  //         align-items: center;
+  //         padding: 0.25rem 0 0 0.125rem;
+
+  //         div {
+  //             margin-right: 0.5rem;
+  //         }
+  //     }
+
+  //     .task-attachment-file-upload {
+  //         display: flex;
+  //         align-items: center;
+  //         .file-icon {
+  //             max-width: 30px;
+  //             max-height: 30px;
+  //             margin-right: 0.25rem;
+  //         }
+  //     }
+  // }
+
+  .task-attachment-content {
+    .btn-action {
+      right: 2px;
+    }
+  }
+}
+
+.x-popover__content .task-attachment-popover-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  .popover-file-icon {
+    margin-right: 0.5rem;
+  }
+
+  .attachment-detail-row {
+    display: flex;
+    align-items: center;
+    margin-top: 0.25rem;
+
+    .prop-name {
+      color: var(--material-grey-9);
+      margin-right: 0.25rem;
+    }
+    .prop-value {
+      font-weight: 500;
+    }
+  }
+}

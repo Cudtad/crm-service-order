@@ -1,0 +1,31 @@
+.dynamic-form-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: -0.125rem 0;
+
+    .dynamic-form-item {
+        padding: 0.125rem;
+
+        .p-field-checkbox {
+            display: flex;
+            margin-bottom: 0;
+            padding-left: 0.125rem;
+            align-items: center;
+            height: 100%;
+        }
+    }
+
+    .autocomplete-user-avatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .dynamic-form-auto-complete {
+        width: 100%;
+        .p-autocomplete-multiple-container {
+            flex: 1 1 auto;
+        }
+    }
+}

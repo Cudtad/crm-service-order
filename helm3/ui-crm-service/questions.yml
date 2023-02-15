@@ -1,0 +1,26 @@
+categories:
+  - Mfe
+questions:
+  - variable: container.image.tag
+    description: "UI crm order"
+    type: enum
+    default: "1.0.0"
+    options: ["1.0.0"]
+    required: true
+    label: Api Version
+    group: "global Settings"
+  - variable: replicaCount
+    description: "Replicas"
+    type: int
+    default: 1
+    required: true
+    label: Api Version
+    group: "global Settings"
+  - variable: configMap.files.application.enable
+    description: "Enable application config"
+    type: boolean
+    default: true
+    required: true
+    label: Enable application config
+    group: "global Settings"
+

@@ -1,0 +1,23 @@
+.crm-navigation {
+    z-index: 1;
+    position: relative;
+    background-color: #f3f3f3;
+    .page-navigation-tool-bar {
+        background-color: transparent;
+    }
+    .info {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+}
+
+.c-button-convert{
+    display: flex !important;
+    align-items: center;
+}

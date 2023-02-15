@@ -1,0 +1,21 @@
+.x-error-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .error-text-emoji {
+        padding-top: 1rem;
+        font-size: 3rem;
+        color: var(--material-grey);
+    }
+
+    .error-message {
+        margin-top: 1rem;
+        font-size: 1.25rem;
+        color: var(--material-grey);
+        padding-bottom: 1rem;
+    }
+}

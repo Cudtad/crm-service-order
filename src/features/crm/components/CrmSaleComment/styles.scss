@@ -1,0 +1,18 @@
+.crm-sale-comment {
+    // hidden reply because error function
+    .function-reply-comment {
+        display: none;
+    }
+    .separator:first-of-type {
+        display: none;
+    }
+    //hidden attachment
+    .mentions-right {
+        button:first-of-type {
+            display: none;
+        }
+        .x-file-upload-button {
+            display: none;
+        }
+    }
+}

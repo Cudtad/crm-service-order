@@ -1,0 +1,14 @@
+apiVersion: v2
+name: ui-crm-service-order
+description: Ui hcm service
+home: https://sicix.vn
+icon: https://gitlab.com/ndu6/sicix/-/raw/main/stable/icon/icon.ico?inline=false
+keywords:
+  - xdp
+  - sicix
+maintainers:
+  - name: xdp
+    email: ducta286@gmail.com
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

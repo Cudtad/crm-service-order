@@ -1,0 +1,12 @@
+.user-autocomplete-panel {
+    .user-autocomplete-email {
+        font-size: var(--little-font-size);
+        color: var(--material-grey);
+    }
+
+    .p-autocomplete-item.p-highlight {
+        .user-autocomplete-email {
+            color: #fff;
+        }
+    }
+}
